@@ -1,0 +1,86 @@
+h1
+{
+        text-align: center;
+	color: red;
+}
+
+p
+{
+        font-family: Verdana;
+        font-style: italic;
+        color: red;
+}      
+
+body
+{
+        background-color: #ededed;
+}
+
+.flotte {
+float:right;
+}
+
+
+h3
+{
+		text-align: left;
+		color: black;
+}
+h2
+{
+color: red;	
+}
+
+a:active
+{
+    background-color: #06b1ea;
+	color: black;
+}
+
+.btn
+{
+  color: gray;
+}
+
+.button {
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 16px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 4px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.buttonnb {
+  background-color: white;
+  color: black;
+  border: 2px solid #000000;
+}
+
+.buttonnb:hover {
+  background-color: #000000;
+  color: white;
+}
+
+.buttonautre {
+  background-color: white;
+  color: #ff3300;
+  border: 2px solid #ff3300;
+}
+
+.buttonautre:hover {
+  background-color: #ff3300;
+  color: white;
+}
+
+.buttonaffiche {
+  font-size: 16px 40px;
+  background-color: white;
+  color: black;
+  border: 2px solid #000000;
+}
