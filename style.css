@@ -13,7 +13,7 @@ p
 
 body
 {
-        background-color: #ededed;
+        background-color: #d6d6d6;
 }
 
 .flotte {
@@ -130,7 +130,7 @@ a:active
 .buttonlienjs {
   display: inline-block;
   border-radius: 12px;
-  background-color: #e1ff00;
+  background-color: #F7DF1E;
   border: none;
   color: #ffffff;
   text-align: center;
@@ -164,6 +164,89 @@ a:active
 }
 
 .buttonlienjs:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonliencalc {
+  display: inline-block;
+  border-radius: 12px;
+  background-color: #000000;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  text-size-adjust: 5;
+  font-size: 28px;
+  padding: 5px;
+  width: 300px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.buttonliencalc span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonliencalc span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonliencalc:hover span {
+  padding-right: 25px;
+}
+
+.buttonliencalc:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+.buttonlienindex {
+  display: inline-block;
+  border-radius: 12px;
+  background-color: #000000;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  text-size-adjust: 5;
+  font-size: 28px;
+  padding: 5px;
+  width: 125px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.buttonlienindex span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonlienindex span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonlienindex:hover span {
+  padding-right: 25px;
+}
+
+.buttonlienindex:hover span:after {
   opacity: 1;
   right: 0;
 }
