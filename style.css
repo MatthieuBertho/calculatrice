@@ -83,4 +83,87 @@ a:active
   background-color: white;
   color: black;
   border: 2px solid #000000;
+  width: 160px;
+}
+
+.buttonlienjava {
+  display: inline-block;
+  border-radius: 12px;
+  background-color: #ff0000;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  text-size-adjust: 5;
+  font-size: 28px;
+  padding: 5px;
+  width: 125px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.buttonlienjava span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonlienjava span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonlienjava:hover span {
+  padding-right: 25px;
+}
+
+.buttonlienjava:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonlienjs {
+  display: inline-block;
+  border-radius: 12px;
+  background-color: #e1ff00;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  text-size-adjust: 5;
+  font-size: 28px;
+  padding: 5px;
+  width: 125px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.buttonlienjs span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonlienjs span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonlienjs:hover span {
+  padding-right: 25px;
+}
+
+.buttonlienjs:hover span:after {
+  opacity: 1;
+  right: 0;
 }

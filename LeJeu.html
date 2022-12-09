@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -7,31 +6,31 @@
 </head>
 <body>
   <p><a href="JavaScript.html"> Le JavaScript </a></P>
-    <script scr="script.js"></script>
+    
   <p>
-    <button class="button buttonaffiche">affichage du nb a faire</button>
+    <button class="button buttonaffiche" id="btnresult"></button>
     <br>
-    <button class="button buttonnb" onclick="click(7)">7</button>
-    <button class="button buttonnb" onclick="click(8)">8</button>
-    <button class="button buttonnb" onclick="click(9)">9</button>
-    <button class="button buttonnb" onclick="resetcalcul(0)">AC</button>
+    <button class="button buttonnb" onclick="clicknb(7)">7</button>
+    <button class="button buttonnb" onclick="clicknb(8)">8</button>
+    <button class="button buttonnb" onclick="clicknb(9)">9</button>
+    <button class="button buttonautre" onclick="resetcalcul(0)">AC</button>
     <br>
-    <button class="button buttonnb" onclick="click(4)">4</button>
-    <button class="button buttonnb" onclick="click(5)">5</button>
-    <button class="button buttonnb" onclick="click(6)">6</button>
+    <button class="button buttonnb" onclick="clicknb(4)">4</button>
+    <button class="button buttonnb" onclick="clicknb(5)">5</button>
+    <button class="button buttonnb" onclick="clicknb(6)">6</button>
     <button class="button buttonautre" onclick="clickop(1)">x</button>
     <button class="button buttonautre" onclick="clickop(2)">/</button>
     <br>
-    <button class="button buttonnb" onclick="click(1)">1</button>
-    <button class="button buttonnb" onclick="click(2)">2</button>
-    <button class="button buttonnb" onclick="click(3)">3</button>
+    <button class="button buttonnb" onclick="clicknb(1)">1</button>
+    <button class="button buttonnb" onclick="clicknb(2)">2</button>
+    <button class="button buttonnb" onclick="clicknb(3)">3</button>
     <button class="button buttonautre" onclick="clickop(3)">+</button>
     <button class="button buttonautre" onclick="clickop(4)">-</button>
     <br>
     <button class="button buttonnb" onclick="click(0)">0</button>
     <button class="button buttonautre" onclick="resultat(0)">Resultat</button>
   </p>
-  <script scr="script.js"></script>
+  <script src="jeujs.js"></script>
 
 </body>
 </html>
