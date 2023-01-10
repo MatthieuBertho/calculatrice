@@ -2,31 +2,52 @@
 <html>
   <head>
     <title>Générateur de QR codes</title>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
-    <link href="style.css" rel="stylesheet">
-    <a href="index.html" class="buttonlienindex" style="vertical-align:middle"><span>Index</span></a>
+    <script src="js1.js"></script>
+    <script src="js2.js"></script>
   </head>
   <body>
     <h1>Générateur de QR codes</h1>
     <form>
       <label for="data">Entrez le contenu du QR code :</label>
       <input type="text" id="data" name="data">
+      <br>
+      <label for="size">Choisir la taille :</label>
+      <select id="size" name="size">
+        <option value="128">128x128</option>
+        <option value="256">256x256</option>
+        <option value="512">512x512</option>
+      </select>
+      <br>
+      <br>
       <button type="button" onclick="generateQR()">Générer</button>
+      <button type="button" onclick="downloadQR()">Télécharger</button>
     </form>
     <br>
     <div id="qrcode"></div>
-
     <script>
       function generateQR() {
         var data = document.getElementById("data").value;
-        var qrcode = new QRCode("qrcode", {
+        if (!data) {
+          alert("Veuillez saisir le contenu du QR code");
+          return;
+        }
+        var size = document.getElementById("size").value;
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
           text: data,
-          width: 128,
-          height: 128,
+          width: size,
+          height: size,
           colorDark : "#000000",
           colorLight : "#ffffff",
           correctLevel : QRCode.CorrectLevel.H
         });
+      }
+      function downloadQR() {
+        var canvas = document.getElementById("qrcode").children[0];
+        var imgData = canvas.toDataURL("image/png");
+  
+        var pdf = new jsPDF();
+        pdf.addImage(imgData, 'PNG', 10, 10);
+        pdf.save("qrcode.pdf");
       }
     </script>
   </body>
