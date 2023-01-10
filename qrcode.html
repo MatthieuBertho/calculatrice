@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Générateur de QR codes</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <a href="index.html" class="buttonlienindex" style="vertical-align:middle"><span>Index</span></a>
+  </head>
+  <body>
+    <h1>Générateur de QR codes</h1>
+    <form>
+      <label for="data">Entrez le contenu du QR code :</label>
+      <input type="text" id="data" name="data">
+      <button type="button" onclick="generateQR()">Générer</button>
+    </form>
+    <br>
+    <div id="qrcode"></div>
+
+    <script>
+      function generateQR() {
+        var data = document.getElementById("data").value;
+        var qrcode = new QRCode("qrcode", {
+          text: data,
+          width: 128,
+          height: 128,
+          colorDark : "#000000",
+          colorLight : "#ffffff",
+          correctLevel : QRCode.CorrectLevel.H
+        });
+      }
+    </script>
+  </body>
+</html>
