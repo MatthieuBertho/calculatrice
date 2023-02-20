@@ -1,54 +1,87 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Générateur de QR codes</title>
-    <script src="js1.js"></script>
-    <script src="js2.js"></script>
-  </head>
-  <body>
-    <h1>Générateur de QR codes</h1>
-    <form>
-      <label for="data">Entrez le contenu du QR code :</label>
-      <input type="text" id="data" name="data">
-      <br>
-      <label for="size">Choisir la taille :</label>
-      <select id="size" name="size">
-        <option value="128">128x128</option>
-        <option value="256">256x256</option>
-        <option value="512">512x512</option>
-      </select>
-      <br>
-      <br>
-      <button type="button" onclick="generateQR()">Générer</button>
-      <button type="button" onclick="downloadQR()">Télécharger</button>
-    </form>
-    <br>
-    <div id="qrcode"></div>
-    <script>
-      function generateQR() {
-        var data = document.getElementById("data").value;
-        if (!data) {
-          alert("Veuillez saisir le contenu du QR code");
-          return;
-        }
-        var size = document.getElementById("size").value;
-        var qrcode = new QRCode(document.getElementById("qrcode"), {
-          text: data,
-          width: size,
-          height: size,
-          colorDark : "#000000",
-          colorLight : "#ffffff",
-          correctLevel : QRCode.CorrectLevel.H
-        });
-      }
-      function downloadQR() {
-        var canvas = document.getElementById("qrcode").children[0];
-        var imgData = canvas.toDataURL("image/png");
-  
-        var pdf = new jsPDF();
-        pdf.addImage(imgData, 'PNG', 10, 10);
-        pdf.save("qrcode.pdf");
-      }
-    </script>
-  </body>
+<head>
+  <a href="index.html" class="buttonlienindex" style="vertical-align:middle"><span>Index</span></a>
+	<title>Générateur de code QR en JavaScript</title>
+  <link rel="stylesheet" href="style2.css">
+	<style>
+		/* Style pour le bouton */
+		.button {
+			background-color: #ffffff;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 10px;
+		}
+
+		/* Style pour le bouton hover */
+		.button:hover {
+			background-color: #ffffff;
+		}
+
+		/* Style pour le champ de saisie de données */
+		#saisie-donnees {
+			width: 80%;
+			height: 50px;
+			font-size: 24px;
+			padding: 10px;
+			border-radius: 10px;
+			border: 2px solid #ccc;
+		}
+
+		/* Style pour la liste déroulante */
+		#select-taille {
+			width: 20%;
+			height: 50px;
+			font-size: 24px;
+			padding: 10px;
+			border-radius: 10px;
+			border: 2px solid #ccc;
+			margin-left: 10px;
+		}
+	</style>
+	<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</head>
+<body>
+	<h1>Générateur de code QR en JavaScript</h1>
+	<label class="button" for="saisie-donnees">Saisissez les données à inclure dans le code QR :</label>
+	<br>
+	<input class="button" type="text" id="saisie-donnees">
+	<select class="buttonlong" id="select-taille">
+		<option class="buttona" value="128">128x128</option>
+		<option class="buttona" value="256" selected>256x256</option>
+		<option class="buttona" value="512">512x512</option>
+	</select>
+	<br><br>
+	<button class="buttonlong" onclick="genererCodeQR()" style="vertical-align:middle"><span>Générer le code QR</span></button>
+	<br><br>
+	<div id="qrcode"></div>
+
+	<script>
+		// Fonction pour générer le code QR à partir des données saisies et de la taille sélectionnée
+		function genererCodeQR() {
+			// Récupérer les données saisies par l'utilisateur
+			var donnees = document.getElementById("saisie-donnees").value;
+
+			// Récupérer la taille sélectionnée par l'utilisateur
+			var taille = document.getElementById("select-taille").value;
+
+			// Générer le code QR en utilisant les données saisies et la taille sélectionnée
+			var qrcode = new QRCode("qrcode", {
+				text: donnees,
+				width: taille,
+				height: taille,
+				colorDark : "#000000",
+				colorLight : "#ffffff",
+				correctLevel : QRCode.CorrectLevel.H
+			});
+		}
+	</script>
+</body>
 </html>
